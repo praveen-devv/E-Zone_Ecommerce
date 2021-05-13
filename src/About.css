@@ -1,0 +1,104 @@
+.about{
+    display: flex;
+    border-bottom: 1px solid rgb(164, 216, 231);
+    /* padding-left: 50px; */
+    margin: 30px 50px;
+}
+
+.about_img{
+    height: 600px;
+}
+
+.about_desc{
+    padding-top: 150px;
+    padding-left: 50px;
+
+}
+
+.about_desc h1{
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    font-weight: bolder;
+}
+
+.about_p{
+    display: flex;
+    padding-right: 40px;
+    text-align: justify;
+    padding-top: 20px;
+}
+
+.about_pOne{
+    padding-right: 50px;
+}
+
+.about_social{
+    text-align: center;
+    padding-top: 100px;
+}
+
+.social_a {
+    
+    color: rgb(58, 116, 184);
+    background: none;
+    margin-right: 20px;
+}
+  
+  
+.social_insta_a{
+    cursor: pointer;
+    color: rgb(184, 58, 100);
+}
+
+@media only screen and (max-width: 800px){
+
+    .about_img{
+        margin-top: 50px;
+        height: 300px;
+    }
+
+    .about_desc{
+        padding-top: 30px;
+        padding-left: 50px;
+    
+    }
+
+    .about_pOne{
+        padding-right: 10px;
+    }
+
+    .about_p{
+        display: block;
+        padding-right: 40px;
+        text-align: justify;
+        padding-top: 20px;
+    }
+
+    .about_social{
+        text-align: center;
+        padding-top: 50px;
+        margin-bottom: 30px;
+    }
+    
+    
+  }
+
+
+  @media only screen and (max-width: 450px){
+    .about_img{
+        display: none;
+    }
+
+    .about{
+        margin: 10px 10px;
+    }
+
+    .about_p{
+        display: block;
+        padding-right: 40px;
+        text-align: justify;
+        padding-top: 20px;
+    }
+    
+  }
+
+  

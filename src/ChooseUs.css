@@ -1,0 +1,37 @@
+.chooseus{
+    margin-right: 100px;
+    margin-left: 100px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.chooseus_desc{
+    padding: 50px 0;
+}
+
+.chooseus_img{
+    height: 100px;
+}
+
+
+.chooseus_cont{
+    padding: 20px;
+}
+
+.chooseus_cont p{
+    padding: 0 50px;
+}
+
+.chooseus_cont h3{
+    padding-top: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+    .chooseus{
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .chooseus_cont p{
+        padding: 0px;
+    }
+}
