@@ -4,8 +4,13 @@ import { useHistory } from 'react-router'
 import { db } from './firebase'
 import logo from './signin.png'
 import { useStateValue } from './StateProvider'
+import firebase from 'firebase'
+import {v4 as uuidv4} from 'uuid';
+import emailjs from 'emailjs-com'
 
 function ModalComponent(props) {
+
+    var firestore = firebase.firestore();
 
     const [mobile, setmobile] = useState('')
     const [address, setaddress] = useState('')
@@ -14,6 +19,9 @@ function ModalComponent(props) {
 
     const history = useHistory();
     const [{basket,user,userDetails},dispatch] = useStateValue();
+    const docRef=firestore.collection('users').doc(user?.uid).collection('Orders').doc(uuidv4());
+
+
 
     const placeOrder = () =>{
         dispatch({
@@ -26,12 +34,49 @@ function ModalComponent(props) {
             }
         })
 
-        db
-        .collection('users')
-        .doc(user?.id)
+        console.log('>>>>>>>>>>return');
+        docRef.set({
+            Deliver_Address: {
+                Name:user.displayName,
+                Mobile:mobile,
+                Address:address,
+                City:city
+            },
+            basket: basket,
+            created:new Date()
+        }).then(function() {
+            console.log(">>>>Saved successfully");
+        }).catch(function(error){
+            console.log(">>>>>error",error);
+        })
 
+        console.log(">>>>>>>>>>>baasket>>>>>>",basket)
+
+        var title=[];
+        basket.map(value => {
+            title.push(value.title)
+        })
+
+        const templateParams = {
+            date:new Date(),
+            name:user?.displayName,
+            mobile:mobile,
+            address:address,
+            city:city,
+            title:title
+
+        }
+
+        emailjs.send('gmail','template_7ri8hkl',templateParams,'user_RCRDjutrRULQamGv5rhAM')
+            .then((response) => {
+                console.log('>>>>>>>>>>Email sent');
+            }, (err) => {
+                console.log('>>>>>>>>Error sending email')
+            })
         
 
+
+        
         dispatch({
             type:'EMPTY_BASKET'
         })

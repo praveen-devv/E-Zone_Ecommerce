@@ -18,7 +18,7 @@ import ScrollToTop from './ScrollToTop';
 import Orders from './Orders';
 
 function App() {
-  const [{},dispatch] = useStateValue();
+  const [{basket},dispatch] = useStateValue();
   useEffect(() => {
     auth.onAuthStateChanged(authuser => {
       console.log("user is >>>",authuser);

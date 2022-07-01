@@ -24,8 +24,6 @@ function Product({id,title,image,features,rating}) {
             history.push('/login')
 
         }
-        
-
     }
 
     return (

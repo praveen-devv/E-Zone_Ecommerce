@@ -20,6 +20,8 @@ import i2 from './Inverter/du10000.png'
 import i3 from './Inverter/jaadoo.png'
 import i4 from './Inverter/nextgen.png'
 import i5 from './Inverter/smart1100.png'
+import i6 from './Inverter/smart1500.png'
+import i7 from './Inverter/vt250.png'
 
 
 function Home() {
@@ -60,9 +62,6 @@ function Home() {
 
                  <div className="home__title">
                     <h3>Inverters and Batteries</h3>
-                    <Link to="/batteries">
-                        <button className="show_more">VIEW ALL</button>
-                    </Link>
                 </div>
                 <div className="home__row">
                     <Product id="i1" title="DU 3500" image={i1} features="Charging topology Boost mode,Soft start Provided." rating={5}/>
@@ -70,6 +69,8 @@ function Home() {
                     <Product id="i3" title="JAADOO 800" image={i3} features="Suitable for low voltage areas,Runs juicer/ Mixer Grinder easily"  rating={4}/>
                     <Product id="i4" title="NEXTGEN 1250" image={i4} features="Runs juicer/ Mixer Grinder,USB Charging point is available."  rating={5}/>
                     <Product id="i5" title="SMART 1100" image={i5} features="Mute annoying beeps,Save energy using holiday mode." rating={4}/>
+                    <Product id="i6" title="SMART 1500" image={i5} features="Mute annoying beeps,Save energy using holiday mode." rating={4}/>
+                    <Product id="i7" title="VT 250" image={i5} features="High pressure ,Long life,Endurance and Excellent performance" rating={4}/>
                  </div>
             
         </div>
